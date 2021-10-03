@@ -23,22 +23,18 @@ using namespace std;
 int main()
 {
 	int digit;
-	int Odigit=0;
 	int firstNum;
 	int secondNum;
 	int newSecondNum = 0;
-	int newNum = 0;
 	int cicle = 0;
 
 	cout << "정수를 입력하세요(1~99) : ";
 	cin >> digit;
-	Odigit = digit;
 
 	int calNum = digit;
 
 	while (true)
 	{
-
 		firstNum = calNum / 10;
 		secondNum = calNum % 10;
 
@@ -63,7 +59,10 @@ int main()
 		++cicle;
 		cout << "Cicle : " << cicle << endl;
 
-		string num3 = to_string(secondNum) + to_string(newSecondNum);
+		firstNum = secondNum;
+		secondNum = newSecondNum;	
+		
+		string num3 = to_string(firstNum) + to_string(secondNum);
 			
 		calNum = stoi(num3);
 
