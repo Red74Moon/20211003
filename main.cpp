@@ -24,7 +24,9 @@ int main()
 	int digit;
 	int firstNum;
 	int secondNum;
-	int newNum =0 ;
+	int newSecondNum = 0;
+	int newNum = 0;
+	int cicle = 0;
 
 	while (true)
 	{
@@ -38,16 +40,27 @@ int main()
 
 		if (firstNum != 0)
 		{
-			newNum = (firstNum + secondNum) % 10;
+			newSecondNum = (firstNum + secondNum) % 10;
 		}
 
-		cout << "firstNumber  : " << firstNum << endl;
-		cout << "SecondNUmber : " << secondNum << endl << endl;
+		if (digit != newNum)
+		{
+	
+			cout << "firstNumber  : " << firstNum << endl;
+			cout << "SecondNUmber : " << secondNum << endl << endl;
 
-		cout << firstNum << " + " << secondNum << " = " << firstNum + secondNum << endl;
-		cout << "두수 합의 일의 숫자 : " << newNum << endl << endl;
+			cout << firstNum << " + " << secondNum << " = " << firstNum + secondNum << endl;
+			cout << "두수 합의 일의 숫자 : " << newSecondNum << endl << endl;
 
-		cout << "새로운 숫자 : " << secondNum << newNum<< endl << endl;
+			cout << "새로운 숫자 : " << secondNum << newSecondNum << endl << endl;
+
+			++cicle;
+			cout << "Cicle : " << cicle << endl;
+		}
+		else
+		{
+			cout << "";
+		}
 	}
 	return 0;
 }
