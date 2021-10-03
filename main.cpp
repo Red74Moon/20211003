@@ -24,17 +24,30 @@ int main()
 	int digit;
 	int firstNum;
 	int secondNum;
+	int newNum =0 ;
 
 	while (true)
 	{
 		cout << "정수를 입력하세요(1~99) : ";
 		cin >> digit;
 		if (digit == 0) break;
+
+
 		firstNum = digit / 10;
 		secondNum = digit % 10;
 
+		if (firstNum != 0)
+		{
+			newNum = (firstNum + secondNum) % 10;
+		}
+
 		cout << "firstNumber  : " << firstNum << endl;
 		cout << "SecondNUmber : " << secondNum << endl << endl;
+
+		cout << firstNum << " + " << secondNum << " = " << firstNum + secondNum << endl;
+		cout << "두수 합의 일의 숫자 : " << newNum << endl << endl;
+
+		cout << "새로운 숫자 : " << secondNum << newNum<< endl << endl;
 	}
 	return 0;
 }
