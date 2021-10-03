@@ -16,50 +16,61 @@
 //N이 주어졌을 때, N의 사이클의 길이를 구하는 프로그램을 작성하시오.
 
 #include <iostream>
+#include<string>
 
 using namespace std;
 
 int main()
 {
 	int digit;
+	int Odigit=0;
 	int firstNum;
 	int secondNum;
 	int newSecondNum = 0;
 	int newNum = 0;
 	int cicle = 0;
 
+	cout << "정수를 입력하세요(1~99) : ";
+	cin >> digit;
+	Odigit = digit;
+
+	int calNum = digit;
+
 	while (true)
 	{
-		cout << "정수를 입력하세요(1~99) : ";
-		cin >> digit;
-		if (digit == 0) break;
 
+		firstNum = calNum / 10;
+		secondNum = calNum % 10;
 
-		firstNum = digit / 10;
-		secondNum = digit % 10;
+		if (calNum < 10)
+		{
+			newSecondNum = secondNum;
+		}
 
 		if (firstNum != 0)
 		{
 			newSecondNum = (firstNum + secondNum) % 10;
 		}
 
-		if (digit != newNum)
+		cout << "firstNumber  : " << firstNum << endl;
+		cout << "SecondNUmber : " << secondNum << endl << endl;
+
+		cout << firstNum << " + " << secondNum << " = " << firstNum + secondNum << endl;
+		cout << "두수 합의 일의 숫자 : " << newSecondNum << endl << endl;
+
+		cout << "새로운 숫자 : " << secondNum << newSecondNum << endl << endl;
+
+		++cicle;
+		cout << "Cicle : " << cicle << endl;
+
+		string num3 = to_string(secondNum) + to_string(newSecondNum);
+			
+		calNum = stoi(num3);
+
+		if (calNum == digit) 
 		{
-	
-			cout << "firstNumber  : " << firstNum << endl;
-			cout << "SecondNUmber : " << secondNum << endl << endl;
-
-			cout << firstNum << " + " << secondNum << " = " << firstNum + secondNum << endl;
-			cout << "두수 합의 일의 숫자 : " << newSecondNum << endl << endl;
-
-			cout << "새로운 숫자 : " << secondNum << newSecondNum << endl << endl;
-
-			++cicle;
-			cout << "Cicle : " << cicle << endl;
-		}
-		else
-		{
-			cout << "";
+			cout << "bye";
+			break;
 		}
 	}
 	return 0;
