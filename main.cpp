@@ -35,17 +35,22 @@ int main()
 	int calNum = digit;
 
 	while (true)
-	{
+	{	
+		// 초기 입력값의 10의 자리 숫자
 		firstNum = calNum / 10;
+		// 초기 입력값의 1의 자리 숫자
 		secondNum = calNum % 10;
 
-		if (calNum < 10)
+		// 입력된 값이 10 미만일 경우 
+		if (digit < 10)
 		{
 			newSecondNum = secondNum;
 		}
 
+		// 첫번째 값이 0이 아닐 경우
 		if (firstNum != 0)
 		{
+			//새로운 숫자 계산
 			newSecondNum = (firstNum + secondNum) % 10;
 		}
 		cout << endl;
@@ -59,17 +64,22 @@ int main()
 
 		cout << "새로운 숫자 : " << secondNum << newSecondNum << endl << endl;
 
+		//반복 횟수 카운트
 		++cicle;
 		cout << "Cicle : " << cicle << endl;
 		cout << "==============================" << endl;
 
+		// 숫자의 새로운 조합 
 		firstNum = secondNum;
 		secondNum = newSecondNum;	
 		
+		// 두 숫자를 문자로 변경
 		string num3 = to_string(firstNum) + to_string(secondNum);
-			
+		
+		// 변경된 문자를 숫자로 변경	
 		calNum = stoi(num3);
 
+		// 처음 수와 변경된 수와 같은지 검사 같으면 종료
 		if (calNum == digit) 
 		{
 			cout << "초기값 " << digit << "와 " << "최종값 " << calNum << "의 값이 같습니다. " << endl;
