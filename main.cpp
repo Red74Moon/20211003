@@ -22,15 +22,16 @@ using namespace std;
 
 int main()
 {
-	int digit;
-	int firstNum;
-	int secondNum;
-	int newSecondNum = 0;
+	int digit; // 초기 입력값
+	int firstNum; // 초기 입력값의 10의 자리 숫자
+	int secondNum; // 초기 입력값의 1의 자리 숫자
+	int newSecondNum; // 두 수 합의 1의 숫자
 	int cicle = 0;
 
 	cout << "정수를 입력하세요(1~99) : ";
 	cin >> digit;
 
+	// 처음 입력한 값 저장, 나중에 비교
 	int calNum = digit;
 
 	while (true)
@@ -47,6 +48,8 @@ int main()
 		{
 			newSecondNum = (firstNum + secondNum) % 10;
 		}
+		cout << endl;
+		cout << "입력된 값 " << endl;
 
 		cout << "firstNumber  : " << firstNum << endl;
 		cout << "SecondNUmber : " << secondNum << endl << endl;
@@ -58,6 +61,7 @@ int main()
 
 		++cicle;
 		cout << "Cicle : " << cicle << endl;
+		cout << "==============================" << endl;
 
 		firstNum = secondNum;
 		secondNum = newSecondNum;	
@@ -68,7 +72,9 @@ int main()
 
 		if (calNum == digit) 
 		{
+			cout << "초기값 " << digit << "와 " << "최종값 " << calNum << "의 값이 같습니다. " << endl;
 			cout << "bye";
+			cout << endl << endl;
 			break;
 		}
 	}
